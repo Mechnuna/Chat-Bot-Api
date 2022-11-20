@@ -1,6 +1,4 @@
 from setuptools import setup
-import os
-BASE_DIR=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 print(os.system('ls -la; pwd'))
@@ -19,5 +17,5 @@ setup(
 		'httpx==0.23.1',
 	],
 	py_modules=['app'],
-	scripts=[f'{BASE_DIR}/app/main.py', f'{BASE_DIR}scripts/create_db.py'],
+	scripts=['main.py', 'scripts/create_db.py'],
 )
