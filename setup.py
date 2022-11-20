@@ -15,5 +15,5 @@ setup(
 		'httpx==0.23.1',
 	],
 	py_modules=['app'],
-	scripts=['app/main.py', 'scripts/create_db.py'],
+	scripts=['./app/main.py', './scripts/create_db.py'],
 )
