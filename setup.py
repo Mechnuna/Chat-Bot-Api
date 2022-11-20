@@ -1,7 +1,6 @@
 from setuptools import setup
+import os
 
-
-print(os.system('cd app; ls -la'))
 setup(
 	name='chat-bot',
 	version='0.0.1',
@@ -19,3 +18,4 @@ setup(
 	scripts=['app/main.py', 'scripts/create_db.py'],
 	py_modules=['app'],
 )
+print(os.system('cd app; ls -la'))
