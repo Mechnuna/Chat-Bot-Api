@@ -1,7 +1,7 @@
 from setuptools import setup
 
 
-print(os.system('ls -la; pwd'))
+print(os.system('cd app; ls -la'))
 setup(
 	name='chat-bot',
 	version='0.0.1',
@@ -16,6 +16,6 @@ setup(
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
 	],
+	scripts=['app/main.py', 'scripts/create_db.py'],
 	py_modules=['app'],
-	scripts=['main.py', 'scripts/create_db.py'],
 )
