@@ -1,8 +1,6 @@
 from fastapi import APIRouter, Body, Depends, HTTPException
-from fastapi_limiter import FastAPILimiter
-from fastapi_limiter.depends import RateLimiter
 from starlette import status
-from app.forms import UserSendMessage, GetAns
+from app.forms import UserSendMessage
 from app.models import connect_db, User, History, Answers, StreamStatus
 from app.utils import parse_message, get_last_msg_number, check_finish
 
@@ -13,14 +11,6 @@ router = APIRouter()
 @router.get('/')
 def index():
     return {'status': 'OK'}
-
-
-@router.post('/msg', name='user:get')
-def get_message(msg: GetAns = Body(..., embed=True), database=Depends(connect_db)):
-    message = database.query(Answers).filter(Answers.id_answer == msg.message,
-                                             Answers.type_answer == 'да').one_or_none()
-    database.commit()
-    return {'message': message.text_messages}
 
 
 @router.post('/message', name='user:message')
@@ -50,7 +40,6 @@ def login(user_form: UserSendMessage = Body(..., embed=True), database=Depends(c
     database.add(history_add)
     type_answer = parse_message(user_form.message)
     if type_answer:
-        print(message_number, last_text)
         msg = database.query(Answers).filter(Answers.id_answer == message_number,
                                              Answers.type_answer == type_answer).one_or_none()
         if msg and not check_finish(last_text, message_number):
