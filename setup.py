@@ -1,4 +1,7 @@
 from setuptools import setup
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 setup(
 	name='chat-bot',
@@ -14,6 +17,6 @@ setup(
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
 	],
-	py_modules=['app'],
-	scripts=['./app/main.py', './scripts/create_db.py'],
+	py_modules=['./app'],
+	scripts=[f'{dir_path}app/main.py', f'{dir_path}scripts/create_db.py'],
 )
