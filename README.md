@@ -37,9 +37,9 @@ uvicorn main:app
 }  
 ```
 Запрос
-![request](img/post_request.png)
+![request](image/post_request.png)
 Ответ
-![responce](img/post_response.png)
+![responce](image/post_response.png)
 
 ## Bonus part
 -> develop fork
