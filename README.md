@@ -42,3 +42,6 @@ uvicorn main:app
 
 ## Bonus part
 -> develop fork
+
+## Запуск тестов
+`pytest test`
