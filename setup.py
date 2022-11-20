@@ -14,6 +14,6 @@ setup(
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
 	],
-	py_modules=[],
+	py_modules=['app'],
 	scripts=['app/main.py', 'scripts/create_db.py'],
 )
