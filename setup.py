@@ -13,7 +13,9 @@ setup(
 		'SQLAlchemy==1.4.44',
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
-		'slowapi=0.1.6'
+		'slowapi==0.1.6',
+		'fastapi-limiter==0.1.5',
+		'redis==4.4.0rc4'
 	],
 	scripts=['app/main.py', 'scripts/create_db.py']
 )

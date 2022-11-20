@@ -28,7 +28,7 @@ def main():
         type_answer varchar(10),
         text_messages varcher(256));'''
                     )
-    session.close()
+    session.commit()
 
 
 if __name__ == "__main__":
