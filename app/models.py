@@ -32,7 +32,7 @@ class History(Base):
 
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'))
-    text_messagee = Column(String)
+    text_message = Column(String)
     message_number = Column(Integer)
     type_user = Column(String, default=StreamStatus.USER.value)
     created_at = Column(String, default=datetime.utcnow())
