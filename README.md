@@ -3,7 +3,6 @@
 ## Mandatory part
 Написать Api для чат-бота
 
-https://chatbot-fastapieora.herokuapp.com/docs
 
 ### Установка
 
