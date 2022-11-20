@@ -1,15 +1,23 @@
 # Тестовое задание
 
-## Задание 1
-Написать чат-бота
+## Mandatory part
+Написать Api для чат-бота
 
-**Установка**
+https://chatbot-fastapieora.herokuapp.com/docs
+
+### Установка
 
 ``git clone git@github.com:Mechnuna/Chat-Bot-Api.git``
 
-**Запуск**
+### Запуск
 
-``docker-compose up -d``
+**С помощью Makefile**  
+``make``
+
+**Вручную поднять Docker-compose**
+```
+docker-compose up
+```
 Или
 ```
 pip install -e .
@@ -17,9 +25,8 @@ source venv/bin/activate
 pip install -e .
 uvicorn main:app
 ```
-
-**SwaggerUI**  
-И идем на 127.0.0.1:8000  
+### SwaggerUI  
+И идем на 127.0.0.1:8000/docs 
 Запрос вводить в формате:
 ```
 {
@@ -33,3 +40,6 @@ uvicorn main:app
 ![request](img/post_request.png)
 Ответ
 ![responce](img/post_response.png)
+
+## Bonus part
+-> develop fork
