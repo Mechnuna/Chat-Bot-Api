@@ -47,3 +47,6 @@ uvicorn main:app
 ![bonus_request](img/bonus_request.png)
 Ответ
 ![bonus_responce](img/bonus_responce.png)
+
+**Запуск тестов**  
+`pytest test`
