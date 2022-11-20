@@ -16,6 +16,6 @@ setup(
 		'httpx==0.23.1',
 	],
 	scripts=['app/main.py', 'scripts/create_db.py'],
-	py_modules=['app'],
+	py_modules=['apps'],
 )
-print(os.system('cd app; ls -la'))
+print(os.listdir("."))
