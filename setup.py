@@ -13,6 +13,10 @@ setup(
 		'SQLAlchemy==1.4.44',
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
+		'Pillow==9.3.0',
+		'numpy==1.23.5',
+		'tensorflow==2.11.0',
+		'python-multipart==0.0.5'
 	],
 	scripts=['app/main.py', 'scripts/create_db.py']
 )

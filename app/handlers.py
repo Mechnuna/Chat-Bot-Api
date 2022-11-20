@@ -1,9 +1,10 @@
-from fastapi import APIRouter, Body, Depends, HTTPException
+from fastapi import APIRouter, Body, Depends, HTTPException, UploadFile, File
 from starlette import status
 from app.forms import UserSendMessage
 from app.models import connect_db, User, History, Answers, StreamStatus
 from app.utils import parse_message, get_last_msg_number, check_finish
 
+from app.ai_model.model import predict, read_imagefile
 
 router = APIRouter()
 
@@ -11,6 +12,17 @@ router = APIRouter()
 @router.get('/')
 def index():
     return {'status': 'OK'}
+
+
+@router.post("/predict/image")
+async def predict_api(file: UploadFile = File(...)):
+    extension = file.filename.split(".")[-1] in ("jpg", "jpeg", "png")
+    if not extension:
+        return "Image must be jpg or png format!"
+    image = read_imagefile(await file.read())
+    prediction = predict(image)
+
+    return prediction
 
 
 @router.post('/message', name='user:message')
@@ -30,7 +42,7 @@ def login(user_form: UserSendMessage = Body(..., embed=True), database=Depends(c
         message_number, last_text = 0, None
     else:
         user_msg = user_form.message
-        message_number, last_text = get_last_msg_number(database, user_form)
+        message_number, last_text = get_last_msg_number(user_form, database)
     history_add = History(
         user_id=int(user_form.id),
         text_message=user_msg,
