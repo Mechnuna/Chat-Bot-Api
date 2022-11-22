@@ -30,7 +30,7 @@ def login(user_form: UserSendMessage = Body(..., embed=True), database=Depends(c
         message_number, last_text = 0, None
     else:
         user_msg = user_form.message
-        message_number, last_text = get_last_msg_number(database, user_form)
+        message_number, last_text = get_last_msg_number(user_form, database)
     history_add = History(
         user_id=int(user_form.id),
         text_message=user_msg,
