@@ -41,7 +41,7 @@ uvicorn main:app
 ![responce](image/post_response.png)
 
 ## Bonus part
--> develop fork
+-> develop tensorflow-api
 
 ## Запуск тестов
 `pytest test`
