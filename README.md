@@ -1,5 +1,6 @@
 # Тестовое задание
 <a href="https://codeclimate.com/github/Mechnuna/Chat-Bot-Api/maintainability"><img src="https://api.codeclimate.com/v1/badges/c11b7aa9c8db1637bd77/maintainability" /></a>
+[![ Лицензия MIT ](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## Mandatory part
 Написать Api для чат-бота

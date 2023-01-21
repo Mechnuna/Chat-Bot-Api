@@ -18,9 +18,8 @@ def parse_message(message: str) -> str:
     ans = None
     if message == r'\start':
         return r'\start'
-    textBlb = TextBlob(message)
-    message = textBlb.correct().lower()
-    if message in ['yes', 'yeah', 'да', 'конечно', 'ага', 'пожалуй']:
+    message = message.lower()
+    if message in ['yes', 'yeah', 'да', 'конечно', 'ага', 'пожалуй', 'ДА']:
         ans = 'да'
     elif message in ['no', 'nope', 'неа', 'нет', 'неа', 'найн']:
         ans = 'нет'
