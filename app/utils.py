@@ -1,4 +1,5 @@
 from typing import Any
+from textblob import TextBlob
 
 from app.forms import UserSendMessage
 from fastapi import Body
@@ -19,9 +20,11 @@ def parse_message(message: str) -> str:
     ans = None
     if message == r'\start':
         return r'\start'
-    if message.lower() in ['yes', 'yeah', 'да', 'конечно', 'ага', 'пожалуй']:
+    textBlb = TextBlob(message)
+    message = textBlb.correct().lower()
+    if message in ['yes', 'yeah', 'да', 'конечно', 'ага', 'пожалуй']:
         ans = 'да'
-    elif message.lower() in ['no', 'nope', 'неа', 'нет', 'неа', 'найн']:
+    elif message in ['no', 'nope', 'неа', 'нет', 'неа', 'найн']:
         ans = 'нет'
     return ans
 

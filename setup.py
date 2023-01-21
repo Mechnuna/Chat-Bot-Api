@@ -14,6 +14,7 @@ setup(
 		'SQLAlchemy==1.4.44',
 		'uvicorn==0.19.0',
 		'httpx==0.23.1',
+		'textblob==0.17.1'
 	],
 	scripts=['app/main.py', 'scripts/create_db.py'],
 	py_modules=['apps'],
