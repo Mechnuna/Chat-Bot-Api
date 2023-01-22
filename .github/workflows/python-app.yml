@@ -44,7 +44,7 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: <code_climate_reporter_id>
       with:
-        coverageCommand: coverage run -m pytest test
+        coverageCommand: coverage run -m pytest test --cov-report xml
         debug: true
 
 
