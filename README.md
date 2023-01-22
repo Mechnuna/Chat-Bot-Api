@@ -1,5 +1,6 @@
 # Тестовое задание
 <a href="https://codeclimate.com/github/Mechnuna/Chat-Bot-Api/maintainability"><img src="https://api.codeclimate.com/v1/badges/c11b7aa9c8db1637bd77/maintainability" /></a>
+<a href="https://codeclimate.com/github/Mechnuna/Chat-Bot-Api/test_coverage"><img src="https://api.codeclimate.com/v1/badges/c11b7aa9c8db1637bd77/test_coverage" /></a>
 [![ Лицензия MIT ](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![ Размер ](https://img.shields.io/github/repo-size/mechnuna/Chat-Bot-Api)
 
