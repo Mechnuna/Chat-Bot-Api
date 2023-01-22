@@ -45,7 +45,7 @@ jobs:
       env:
         CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
       with:
-        coverageCommand: coverage run -m pytest test --cov=./ --cov-report=xml --cov-report=html
+        coverageCommand: coverage run -m pytest test --cov=./app --cov-report=xml --cov-report=html
         debug: true
 
 
